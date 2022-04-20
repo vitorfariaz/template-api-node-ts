@@ -4,7 +4,7 @@
 ### Pre conditions
 - You must have installed [NodeJS](https://nodejs.org/en/download/) and [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable) 
 - You must have a mongoDB instance on port 27017
-----------------------------------
+
 ### Steps
 - Download the source files in your local machine
 - Open the command prompt in the folder 
@@ -23,7 +23,7 @@ Then, the API will be listen at port 3000
 ### Pre conditions
 - You must have installed [Docker](https://docs.docker.com/desktop/) and [docker-compose](https://docs.docker.com/compose/install/)
 
-----------------------------------
+
 ### Steps
 - Download the source files in your local machine
 - Open the command prompt in the folder 
