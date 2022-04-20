@@ -24,7 +24,6 @@ yarn install
 # Run the application
 yarn dev
 ```
-
 Then, the API will be listen at port 3000
 
 
@@ -32,7 +31,7 @@ Then, the API will be listen at port 3000
 - Download the source files in your local machine
 - Open the command prompt in the folder 
 - Run the scripts below (don't run the lines starting with '#')
-````
+```
 docker-compose up
 ```
 
