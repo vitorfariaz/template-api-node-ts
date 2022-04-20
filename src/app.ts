@@ -11,7 +11,7 @@ class App {
         this.routes();
 
         // this.database();  // we need to create database for this to work
-        console.log('criou o app.ts')
+        console.log('\'src/app.ts\' Created')
     }
 
     private middlewares(): void {
@@ -26,8 +26,8 @@ class App {
 
     private routes(): void {
         this.express.get('/', (req, res) => {
-            console.log('chamou GET /');
-            return res.send('hello world');
+            console.log('GET request realized');
+            return res.send('hello world, it worked!');
         })
 
     }
