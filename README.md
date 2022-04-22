@@ -39,11 +39,10 @@ request-body:
  - DELETE /pets/{id}: delete a pet by id
 
 Rules:
- - You have to Login in the application to see others pets
+ - You have to Login to see others pets
  - You only could update or delete your pets
  - You only could have 5 pets created
  - You could not create a pet with the same name and type
-
 
 ## Run the Application - Via Docker (suggested)
 
