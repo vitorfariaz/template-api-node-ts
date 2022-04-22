@@ -10,18 +10,17 @@ class App {
         this.middlewares();
         this.routes();
 
-        // this.database();  // we need to create database for this to work
+        this.database();  // we need to create database for this to work
         console.log('\'src/app.ts\' Created')
     }
 
     private middlewares(): void {
         this.express.use(express.json());
         this.express.use(cors());
-
     }
 
     private database(): void {
-        mongoose.connect('mongodb://localhost:27017/tsnode');
+        mongoose.connect('mongodb://mymongo:27017/pets');
     }
 
     private routes(): void {

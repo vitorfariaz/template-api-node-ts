@@ -1,10 +1,43 @@
-version: "3"
+# version: "3"
+
+# services: 
+#   app:
+#     build: .
+#     command: yarn dev
+#     ports: 
+#       - "3000:3000"
+#     volumes:
+#       - .:/usr/app  
+
+# Alura
+version: "3.9"
 
 services: 
+  mongodb:
+    image: mongo:latest
+    container_name: mymongo
+    networks: 
+      - compose-bridge
+    ports:
+      - "2717:27017"             # map port 27017 from container to 2717 local machine
+    volumes:
+      - mongo-data:/data/db
   app:
-    build: .
+    build: .                     # build local Dockerfile 
     command: yarn dev
+    container_name: app
+    networks:
+      - compose-bridge
     ports: 
       - "3000:3000"
     volumes:
-      - .:/usr/app  
+      - .:/usr/app               # local files are in /usr/app container folder
+    depends_on: 
+      - mongodb
+
+networks:
+  compose-bridge:
+    driver: bridge
+
+volumes: 
+  mongo-data:
