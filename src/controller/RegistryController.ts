@@ -15,6 +15,16 @@ class RegistryController {
         return res.json(users);
     }
 
+    public async findByUsernameAndPassword(req: Request, res: Response): Promise<Response> {
+        console.log('finding all users in database...')
+
+        const users = await User.find()
+
+        console.log(`founded users: ${users}`)
+
+        return res.json(users);
+    }
+
     public async create(req: Request, res: Response): Promise<Response> {
         console.log('Creating an user in database...')
 
