@@ -11,7 +11,7 @@ class App {
         this.middlewares();
         this.routes();
 
-        this.database();  // we need to create database for this to work
+        this.database();
         console.log('\'src/app.ts\' Created')
     }
 

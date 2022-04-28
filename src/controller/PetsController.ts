@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import Pet from '../schemas/Pet';
 import PetService from '../service/PetService';
 import PetInterface from '../schemas/PetInterface';
-import { isValidId } from '../service/isValidObjectId';
 import { ErrorMessages, isError } from '../service/Error';
 import { serverError } from './ControllerService';
 
