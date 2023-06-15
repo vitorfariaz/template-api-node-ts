@@ -121,9 +121,11 @@ server.ts
 ```
 
 The flow of a request will be:
+
 <br />
 
-server -> app -> routes -> controller -> service -> db_layer
+`server` -> `app` -> `routes` -> `/controller` -> `/service` -> `schemas`
+
 <br />
 
 ![](./node-template-api-architecture.svg)
@@ -136,18 +138,24 @@ Where the application starts
 It starts the server with its routes and create the database connection
 
 <br />
+
 Used by `server.ts`
 
 <br />
+
 Use `routes.js`
 
 ### routes.js 
 Registry all the routes/paths of our API and add the resolvers(functions) that will be executed for each route 
 
 <br />
+
 Used by `app.ts`
+
 <br />
+
 Use `src/controller` functions
+
 
 ### /controller
 
@@ -158,8 +166,11 @@ Responsible to
 - Call our service domain layer
 
 <br />
+
 Used by `src/routes.js`
+
 <br />
+
 Use `/service` layer
 
 ### /service
@@ -168,8 +179,13 @@ Responsible for
 - Business rules
 
 <br />
+
 Used by `/controller`
+
+<br />
+
 Use `/schemas`
+
 
 ### /schemas
 Represents our domain models and the models that we'll persist in mongo DB
@@ -179,6 +195,7 @@ We have:
 - DomainInterface - It represents the business model entities. Could be not related to a database. 
 
 <br />
+
 Used by `/service`
 
 ## Tech stack 
