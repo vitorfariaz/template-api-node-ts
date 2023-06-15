@@ -10,16 +10,16 @@ It creates a CRUD API for Pets resources
 
 ## API definition and routes
 The API has the below endpoints
-- POST /registry - Create an account
-- POST /login - Login 
-- GET /pets - Get all pets
-- POST /pets - Create a pet
-- DELETE /pets/{id} - Delete a pet by id
-- PUT /pets/{id} - Update a pet by id
+- POST `/registry` - Create an account
+- POST `/login` - Login 
+- GET `/pets` - Get all pets
+- POST `/pets` - Create a pet
+- DELETE `/pets/{id}` - Delete a pet by id
+- PUT `/pets/{id}` - Update a pet by id
 
 Below, you can see the details/contract of each endpoint
 
-Create an account body:
+Create an account request body:
  ```json
  {
      "name": "Vitor Farias",
@@ -37,7 +37,7 @@ Login request body:
 }
 ```
 
-Create pet body:
+Create pet request body:
 ```json
 {
     "ownerUsername": "vitorfariaz",
@@ -93,7 +93,6 @@ yarn dev
 ```
 Then, the API will be listen at port 3000
 
-
 To create a mongo instance locally
 - Download [Docker](https://www.docker.com/products/docker-desktop/)
 - Create and account in docker/dockerhub
@@ -120,15 +119,11 @@ routes.js
 server.ts
 ```
 
+![](./node-template-api-architecture.svg)
+
 The flow of a request will be:
 
-<br />
-
 `server` -> `app` -> `routes` -> `/controller` -> `/service` -> `/schemas`
-
-<br />
-
-![](./node-template-api-architecture.svg)
 
 ### server.ts
 It represents the server, we can specify the port that it will handle
@@ -146,8 +141,6 @@ Use `routes.js`
 ### routes.js 
 Registry all the routes/paths of our API and add the resolvers(functions) that will be executed for each route 
 
-<br />
-
 Used by `app.ts`
 
 Use `/controller` functions
@@ -161,18 +154,14 @@ Responsible to
 - Translate our internal models into API Responses
 - Call our service domain layer
 
-<br />
-
 Used by `/routes.js`
 
 Use `/service` layer
 
+
 ### /service
 
-Responsible for 
-- Business rules
-
-<br />
+Responsible for Business rules
 
 Used by `/controller`
 
@@ -186,9 +175,8 @@ We have:
 - Domain - Is the ORM, Object Relational Mapping. It respresents the "table" or "document" that we persist on mongo
 - DomainInterface - It represents the business model entities. Could be not related to a database. 
 
-<br />
-
 Used by `/service`
+
 
 ## Tech stack 
 
