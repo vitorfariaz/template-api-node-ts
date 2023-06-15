@@ -9,7 +9,7 @@ It creates a CRUD API for Pets resources
 - [Tech stack](#tec)
 
 ## API definition and routes
-The API has the below endpoint
+The API has the below endpoints
 - POST /registry - Create an account
 - POST /login - Login 
 - GET /pets - Get all pets
@@ -135,11 +135,19 @@ It represents the server, we can specify the port that it will handle
 Where the application starts
 It starts the server with its routes and create the database connection
 
+<br />
+Used by `server.ts`
+
+<br />
+Use `routes.js`
+
 ### routes.js 
 Registry all the routes/paths of our API and add the resolvers(functions) that will be executed for each route 
 
-Use src/controller functions
-Is used by src/app.ts
+<br />
+Used by `app.ts`
+<br />
+Use `src/controller` functions
 
 ### /controller
 
@@ -149,18 +157,19 @@ Responsible to
 - Translate our internal models into API Responses
 - Call our service domain layer
 
-
-Is used by src/routes
 <br />
-Call /service layer
+Used by `src/routes.js`
+<br />
+Use `/service` layer
 
 ### /service
 
 Responsible for 
 - Business rules
 
-Is used by controller
-Call repositories
+<br />
+Used by `/controller`
+Use `/schemas`
 
 ### /schemas
 Represents our domain models and the models that we'll persist in mongo DB
@@ -169,6 +178,8 @@ We have:
 - Domain - Is the ORM, Object Relational Mapping. It respresents the "table" or "document" that we persist on mongo
 - DomainInterface - It represents the business model entities. Could be not related to a database. 
 
+<br />
+Used by `/service`
 
 ## Tech stack 
 
