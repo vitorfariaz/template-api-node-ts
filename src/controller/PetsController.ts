@@ -53,7 +53,7 @@ class PetsController {
             return serverError(err, res);
         }
 
-    }
+    } 
 
     public async update(req: Request, res: Response): Promise<Response> {
 
@@ -63,15 +63,16 @@ class PetsController {
             const { name } = req.body;
             const { id } = req.params;
 
-            let foundedPet : PetInterface = await petService.findById(id);
-            foundedPet.name = name;
-
-            await foundedPet.updateOne({ name })
+            let foundedPet = await petService.update(id, name);
 
             console.log(`Pet updated in database: ${foundedPet}`)
 
             return res.status(200).json();
         } catch (err) {
+            if(err.message = ErrorMessages.PetNotFound){
+                return res.status(404).json({error: "Pet Not found"});
+            }
+            
             console.error(err)
             return res.status(500).json({ error: "Internal server error." })
         }
