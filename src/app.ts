@@ -12,7 +12,6 @@ class App {
         this.routes();
 
         this.database();
-        console.log('\'src/app.ts\' Created')
     }
 
     private middlewares(): void {

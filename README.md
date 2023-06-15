@@ -1,5 +1,7 @@
 # Template of nodeJS API with Typescript
 This is a template of an API that provides some resources:
+- An with below endpoints
+- Connection with an mongo database on port 2
  
  ## API resources
  ### Authentication and Login

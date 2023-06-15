@@ -63,7 +63,7 @@ class PetsController {
             const { name } = req.body;
             const { id } = req.params;
 
-            let foundedPet: PetInterface = await Pet.findById(id);
+            let foundedPet : PetInterface = await petService.findById(id);
             foundedPet.name = name;
 
             await foundedPet.updateOne({ name })

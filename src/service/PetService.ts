@@ -16,12 +16,12 @@ export default class PetService {
         }
     }
 
-    public async findById(id: string): Promise<PetInterface | MyError> {
+    public async findById(id: string): Promise<PetInterface> {
 
         console.log(`finding pet by id ${id} in database...`)
-        const pet: PetInterface = await Pet.findById(id);
+        const pet = await Pet.findById(id);
         if (!pet) {
-            return { message: ErrorMessages.PetNotFound }
+            throw {message: ErrorMessages.PetNotFound}
         }
 
         console.log(`founded a pet with id ${id} pet: ${pet}`);
