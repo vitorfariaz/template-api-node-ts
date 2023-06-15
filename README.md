@@ -124,7 +124,7 @@ The flow of a request will be:
 
 <br />
 
-`server` -> `app` -> `routes` -> `/controller` -> `/service` -> `schemas`
+`server` -> `app` -> `routes` -> `/controller` -> `/service` -> `/schemas`
 
 <br />
 
@@ -141,8 +141,6 @@ It starts the server with its routes and create the database connection
 
 Used by `server.ts`
 
-<br />
-
 Use `routes.js`
 
 ### routes.js 
@@ -152,9 +150,7 @@ Registry all the routes/paths of our API and add the resolvers(functions) that w
 
 Used by `app.ts`
 
-<br />
-
-Use `src/controller` functions
+Use `/controller` functions
 
 
 ### /controller
@@ -167,9 +163,7 @@ Responsible to
 
 <br />
 
-Used by `src/routes.js`
-
-<br />
+Used by `/routes.js`
 
 Use `/service` layer
 
@@ -181,8 +175,6 @@ Responsible for
 <br />
 
 Used by `/controller`
-
-<br />
 
 Use `/schemas`
 
